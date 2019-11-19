@@ -1,6 +1,6 @@
 <a href='/'>Home</a>
 <h1>Shelters Index</h1>
 <% @shelters.each do |shelter| %>
-  <h3><a href="/shelters/<%= shelter.id %>"><%= shelter.name %></h3>
+  <h3> <%= link_to shelter.name, "/shelters/#{shelter.id}" %></h3>
 <% end %>
 <a href='/shelters/new'>Add new shelter</a>
