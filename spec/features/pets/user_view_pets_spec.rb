@@ -17,15 +17,15 @@ RSpec.describe 'pets_view_page', type: :feature do
       name: 'Fido',
       approx_age: 3,
       sex: 'male',
-      adoptable: true
+      adoptable?: true
 
       )
 
     visit '/pets'
 
-    expect(page) to have_content(pet_1.name)
-    expect(page) to have_content(pet_1.approx_age)
-    expect(page) to have_content(pet_1.sex)
-    expect(page) to have_content(shelter_1.name)
+    expect(page).to have_content(pet_1.name)
+    expect(page).to have_content(pet_1.approx_age)
+    expect(page).to have_content(pet_1.sex)
+    expect(page).to have_content(shelter_1.name)
   end
 end
