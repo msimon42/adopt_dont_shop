@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'shelters index page', type: :feature do
-  it 'can see all songs titles and play count' do
+  it 'can see all shelters' do
     shelter_1 = Shelter.create(
       name: 'Shelter of Dog',
       address: '123 main street',
