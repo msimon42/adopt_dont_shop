@@ -8,8 +8,6 @@
   <%= text_field_tag :description %><br>
   <%= label_tag :approx_age %>
   <%= text_field_tag :approx_age %><br>
-  <p> Male: <%= radio_button_tag 'gender', 'Male' %>
-  Female: <%= radio_button_tag 'gender', 'Female' %></p>
   <%= submit_tag 'Submit' %>
 <% end %>
 <%= link_to "<button type='button'>Cancel</button>".html_safe, "/pets/#{@pet.id}" %>
