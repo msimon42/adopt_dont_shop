@@ -42,6 +42,6 @@ class PetsController < ApplicationController
       approx_age: params[:approx_age]
       })
     @pet.save
-    redirect_to "/pets/#{pet.id}"  
+    redirect_to "/pets/#{@pet.id}"  
   end
 end
