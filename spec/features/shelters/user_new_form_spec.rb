@@ -9,5 +9,18 @@ RSpec.describe 'new shelter form' do
     expect(page).to have_field('shelter[city]')
     expect(page).to have_field('shelter[state]')
     expect(page).to have_field('shelter[zip]')
-  end   
+  end
+
+  it 'can create new shelter' do
+    fill_in 'shelter[name]', with: 'New Shelter'
+    fill_in 'shelter[address]', with: '123 Main'
+    fill_in 'shelter[city]', with: 'Denver'
+    fill_in 'shelter[state]', with: 'CO'
+    fill_in 'shelter[zip]', with: '80211'
+
+    click_on 'Submit'
+
+    expect(current_path).to_eq('/shelters')
+    expect(page).to have_content('New Shelter')
+  end
 end

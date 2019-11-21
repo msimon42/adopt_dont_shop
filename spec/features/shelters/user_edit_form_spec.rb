@@ -10,7 +10,9 @@ RSpec.describe 'shelters edit page', type: :feature do
       zip: '80234'
     )
 
-    visit "shelters/#{shelter_1.id}/edit"
+    visit "/shelters/"
+    click_on 'Edit'
+    expect(current_path).to_eq("/shelters/#{shelter_1.id}/edit")
 
     expect(page).to have_content("Edit Shelter")
     expect(page).to have_field('shelter[name]')
@@ -18,6 +20,6 @@ RSpec.describe 'shelters edit page', type: :feature do
     expect(page).to have_field('shelter[city]')
     expect(page).to have_field('shelter[state]')
     expect(page).to have_field('shelter[zip]')
-    
+
   end
 end
