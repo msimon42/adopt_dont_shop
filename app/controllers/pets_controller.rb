@@ -31,4 +31,15 @@ class PetsController < ApplicationController
   def edit
     @pet = Pet.find(params[:id])
   end
+
+  def update
+    @pet = Pet.find(params[:id])
+
+    @pet.update({
+      image: params[:image_file],
+      name: params[:name],
+      description: params[:description],
+      approx_age: params[:approx_age]
+      })
+  end
 end
