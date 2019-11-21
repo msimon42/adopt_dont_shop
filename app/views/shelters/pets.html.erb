@@ -1,10 +1,9 @@
 
-<a href='/'>Home</a>
-<h1>Pets Index</h1>
-<% @pets.each do |pet| %>
+<a href="/shelters">Shelter Index</a>
+<h1>Pets in <%= @shelter.name %></h1>
+<% @shelter_pets.each do |pet| %>
   <img src="<%= pet.image %>" alt="pet_image" style="width:200px;height:300px">
   <h2><%= pet.name %></h2>
   <p>Approximate Age: <%= pet.approx_age %></p>
   <p>Sex: <%= pet.sex %></p>
-  <p>Location: <%= pet.shelter_name(pet.shelter_id) %></p>
 <% end %>
