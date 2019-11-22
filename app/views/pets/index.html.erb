@@ -6,6 +6,9 @@
   <h2><%= link_to pet.name, "/pets/#{pet.id}" %></h2>
   <p>Approximate Age: <%= pet.approx_age %></p>
   <p>Sex: <%= pet.sex %></p>
-  <p>Location: <%= pet.shelter_name %></p>
-  <%= link_to "<button type='button'>Edit</button".html_safe, "/pets/#{pet.id}/edit" %>
+  <p>Location: <%= link_to pet.shelter_name, "/shelters/#{pet.shelter_id}" %></p>
+  <%= link_to "<button type='button'>Edit</button>".html_safe, "/pets/#{pet.id}/edit" %>
+  <%= form_tag "/pets/#{pet.id}", method: :delete do %>
+      <%= submit_tag 'delete' %>
+  <% end %>
 <% end %>
