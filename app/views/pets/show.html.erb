@@ -9,3 +9,6 @@
  <p>Adoption Status: <%= @pet.adoption_status %></p>
 
 <%= link_to "<button type='button'>Update Info</button>".html_safe, "/pets/#{@pet.id}/edit" %>
+<%= form_tag '/pets/', method: :delete do %>
+  <%= submit_tag 'Delete' %>
+<% end %>
