@@ -8,14 +8,14 @@ class PetsController < ApplicationController
   end
 
   def new
-    @shelter = Shelter.find(params[:id])
+    @shelter_id = params[:shelter_id]
   end
 
   def create
-    shelter = Shelter.find(params[:id])
+    shelter_id = params[:shelter_id]
 
     pet = Pet.new({
-      shelter_id: shelter.id,
+      shelter_id: shelter_id,
       image: params[:image_file],
       name: params[:name],
       description: params[:description],
@@ -29,7 +29,7 @@ class PetsController < ApplicationController
   end
 
   def edit
-    @pet = Pet.find(params[:id])
+    @pet_id = params[:pet_id]
   end
 
   def update
