@@ -7,4 +7,5 @@
   <p>Approximate Age: <%= pet.approx_age %></p>
   <p>Sex: <%= pet.sex %></p>
   <p>Location: <%= pet.shelter_name %></p>
+  <%= link_to "<button type='button'>Edit</button".html_safe, "/pets/#{pet.id}/edit" %>
 <% end %>
