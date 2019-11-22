@@ -19,8 +19,13 @@ RSpec.describe 'new shelter form' do
     fill_in 'shelter[zip]', with: '80211'
 
     click_on 'Submit'
+    new_shelter = Shelter.last
 
     expect(current_path).to_eq('/shelters')
-    expect(page).to have_content('New Shelter')
+    expect(page).to have_content(new_shelter.name)
+    expecct(page).to have_content(new_shelter.address)
+    expect(page).to have_content(new_shelter.city)
+    expect(page).to have_content(new_shelter.state)
+    expect(page).to have_content(new_shelter.zip)
   end
 end

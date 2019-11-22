@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'pet show page', type: :feature do
   it 'can see pet info' do
-    pet_1 = Pet.create!(
+    pet_1 = Pet.create(
       shelter_id: 2,
       image: 'pet_1.jpg',
       name: 'Fido',
