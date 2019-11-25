@@ -1,10 +1,11 @@
-<a href='/'>Home</a>
+
 <h1>Shelters Index</h1>
 <% @shelters.each do |shelter| %>
-  <h3> <%= link_to shelter.name, "/shelters/#{shelter.id}" %>
-  <%= link_to "<button type='button'>Edit</button>".html_safe, "shelters/#{shelter.id}/edit" %>
-  <%= form_tag "/shelters/#{shelter.id}", method: :delete do %>
-    <%= submit_tag 'Delete' %>
-  <% end %></h3>
+  <h3> <%= link_to shelter.name, "/shelters/#{shelter.id}" %></h3>
+  <ul class='edit-delete'>
+  <li><%= link_to "<button type='button' class='btn btn-success'>Edit</button>".html_safe, "shelters/#{shelter.id}/edit" %></li>
+  <li><%= form_tag "/shelters/#{shelter.id}", method: :delete do %>
+    <%= submit_tag 'Delete', class: 'btn btn-danger' %>
+  <% end %></li></ul>
 <% end %>
 <a href='/shelters/new'>Add new shelter</a>
