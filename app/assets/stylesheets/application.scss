@@ -15,11 +15,33 @@
  */
 @import "bootstrap";
 html {
-  background-color: #FFDEDB
+  background-color: #b5eeff
 
+}
+
+body {
+  background-color: #b5eeff
 }
 
 header {
   background-color: #f20d0d;
   color: #FFDEDB;
 }
+
+.edit-delete {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.edit-delete li {
+  display: inline-block;
+}
+
+#shelter-show {
+  list-style: none;
+}
+// #startpage {
+//   background-image: url(https://media.giphy.com/media/Kan1AHHJmMRYA/source.gif);
+// }
