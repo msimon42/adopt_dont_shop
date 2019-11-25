@@ -1,5 +1,5 @@
 
-<a href='/'>Home</a>
+
 <h1>Pets Index</h1>
 <% @pets.each do |pet| %>
   <img src="<%= pet.image %>" alt="pet_image" style="width:200px;height:300px">
@@ -7,8 +7,9 @@
   <p>Approximate Age: <%= pet.approx_age %></p>
   <p>Sex: <%= pet.sex %></p>
   <p>Location: <%= link_to pet.shelter_name, "/shelters/#{pet.shelter_id}" %></p>
-  <%= link_to "<button type='button'>Edit</button>".html_safe, "/pets/#{pet.id}/edit" %>
-  <%= form_tag "/pets/#{pet.id}", method: :delete do %>
-      <%= submit_tag 'delete' %>
+  <ul class='edit-delete'>
+  <li><%= link_to "<button type='button' class='btn btn-success'>Edit</button>".html_safe, "/pets/#{pet.id}/edit" %></li>
+  <li><%= form_tag "/pets/#{pet.id}", method: :delete do %>
+      <%= submit_tag 'delete', class: 'btn btn-danger' %></li></ul>
   <% end %>
 <% end %>
