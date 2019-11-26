@@ -26,9 +26,13 @@ RSpec.describe 'edit pet form', type: :feature do
     expect(page).to have_field('Description')
     expect(page).to have_field('Approx age')
 
-    fill_in 'Name', with: 'Pebbles'
-    fill_in 'Image file', with: 'pebbles.png'
-    fill_in 'Description', with: 'Half breed lab'
-    fill_in 'Approx age', with: '3'
+    fill_in 'Description', with: 'Half breed golden retriever'
+    fill_in 'Approx age', with: '4'
+
+    click_button 'Submit'
+
+    expect(current_path).to eq("/pets/#{pet_1.id}")
+    expect(page).to have_content('4')
+    expect(page).to have_content('Half breed golden retriever')
   end
 end

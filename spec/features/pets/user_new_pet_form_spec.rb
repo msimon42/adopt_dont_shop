@@ -22,5 +22,10 @@ RSpec.describe 'new pet form', type: :feature do
     fill_in 'Description', with: 'Half breed lab'
     fill_in 'Approx age', with: '3'
     choose  'gender', with: 'Female'
+
+    click_button 'Submit'
+
+    expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
+    expect(page).to have_content('Pebbles')
   end
 end
