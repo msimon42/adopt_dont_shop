@@ -1,5 +1,4 @@
 
-
 <h1><%= @shelter.name %></h1>
 <ul id='shelter-show'>
   <li>Address: <%= @shelter.address %></li>
@@ -7,10 +6,9 @@
   <li>State: <%= @shelter.state %></li>
   <li>Zip: <%= @shelter.zip %></li>
 </ul>
-<a href="/shelters/<%= @shelter.id %>/pets">View Pets</a>
-<a href="/shelters/<%= @shelter.id %>/edit">Update Info</a>
-<form action="/shelters/<%= @shelter.id %>" method="POST">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="delete"/>
-</form>
+<ul class='edit-delete'>
+<li><%= link_to "<button type='button' class='btn btn-success'>Update Info</button>".html_safe, "/pets/#{@shelter.id}/edit" %></li>
+<li><%= link_to "<button type='button' class='btn btn-primary'>View Pets</button>".html_safe, "/shelters/#{@shelter.id}/pets" %></li>
+<li><%= form_tag "/pets/#{@shelter.id}", method: :delete do %>
+  <%= submit_tag 'Delete', class: 'btn btn-danger' %></li></ul>
+<% end %>
