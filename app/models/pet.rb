@@ -3,12 +3,11 @@ class Pet < ApplicationRecord
   validates_presence_of :name, :approx_age, :description, :image, :adoptable?, :sex
 
   def shelter_name
-    shelter = Shelter.find(self.shelter_id)
-    shelter.name
+    self.shelter.name
   end
 
   def adoption_status
-    return 'Available for adoption' if self.adoptable?
+    return 'Available for Adoption' if self.adoptable?
     'Not available for adoption'
   end
 

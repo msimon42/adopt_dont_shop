@@ -11,6 +11,6 @@
   <%= text_field_tag :approx_age %><br>
   <p> Male: <%= radio_button_tag 'gender', 'Male' %>
   Female: <%= radio_button_tag 'gender', 'Female' %></p>
-  <%= submit_tag 'Submit' %>
+  <%= submit_tag 'Submit', class: 'btn btn-success' %>
 <% end %>
-<%= link_to "<button type='button'>Cancel</button>".html_safe, "/shelters/#{@shelter_id}/pets" %>
+<%= link_to "<button type='button' class='btn btn-danger'>Cancel</button>".html_safe, "/shelters/#{@shelter_id}/pets" %>

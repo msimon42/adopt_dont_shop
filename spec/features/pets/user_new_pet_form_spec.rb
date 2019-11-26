@@ -10,8 +10,17 @@ RSpec.describe 'new pet form', type: :feature do
 
     visit "/shelters/#{shelter_1.id}/pets/new"
 
-    expect(page).to have_content("Add Pet")
-    expect(page).to have_content("Name: ")
-    expect(page).to have_content("Description: ")
+    expect(page).to have_field('Name')
+    expect(page).to have_field('Image file')
+    expect(page).to have_field('Description')
+    expect(page).to have_field('Approx age')
+    expect(page).to have_content('Male')
+    expect(page).to have_content('Female')
+
+    fill_in 'Name', with: 'Pebbles'
+    fill_in 'Image file', with: 'pebbles.png'
+    fill_in 'Description', with: 'Half breed lab'
+    fill_in 'Approx age', with: '3'
+    choose  'gender', with: 'Female'
   end
 end
