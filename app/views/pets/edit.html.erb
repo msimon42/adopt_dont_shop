@@ -8,6 +8,6 @@
   <%= text_field_tag :description, @pet.description %><br>
   <%= label_tag :approx_age %>
   <%= text_field_tag :approx_age, @pet.approx_age %><br>
-  <%= submit_tag 'Submit' %>
+  <%= submit_tag 'Submit', class: 'btn btn-success' %>
+  <%= link_to "<button type='button' class='btn btn-danger'>Cancel</button>".html_safe, "/pets/#{@pet.id}" %>
 <% end %>
-<%= link_to "<button type='button'>Cancel</button>".html_safe, "/pets/#{@pet.id}" %>
