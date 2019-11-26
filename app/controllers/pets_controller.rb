@@ -12,10 +12,10 @@ class PetsController < ApplicationController
   end
 
   def create
-    shelter_id = params[:shelter_id]
-
+    @shelter = Shelter.find(params[:id])
+    binding.pry
     pet = Pet.new({
-      shelter_id: shelter_id,
+      shelter_id: shelter.id,
       image: params[:image_file],
       name: params[:name],
       description: params[:description],
@@ -23,18 +23,17 @@ class PetsController < ApplicationController
       sex: params[:gender],
       adoptable?: true
       })
-
+    binding.pry
     pet.save
-    redirect_to "/shelters/#{shelter.id}/pets"
+    redirect_to "/shelters/#{@shelter.id}/pets"
   end
 
   def edit
-    @pet_id = params[:pet_id]
+    @pet = Pet.find(params[:id])
   end
 
   def update
     @pet = Pet.find(params[:id])
-
     @pet.update({
       image: params[:image_file],
       name: params[:name],

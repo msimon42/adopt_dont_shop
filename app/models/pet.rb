@@ -7,7 +7,7 @@ class Pet < ApplicationRecord
   end
 
   def adoption_status
-    return 'Available for adoption' if self.adoptable?
+    return 'Available for Adoption' if self.adoptable?
     'Not available for adoption'
   end
 
