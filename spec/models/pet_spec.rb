@@ -7,6 +7,7 @@ describe Pet, type: :model do
     it {should validate_presence_of :description}
     it {should validate_presence_of :approx_age}
     it {should validate_presence_of :sex}
+    it {should validate_numericality_of :approx_age}
   end
 
   describe 'methods' do
