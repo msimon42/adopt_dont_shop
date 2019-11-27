@@ -46,7 +46,7 @@ describe Shelter, type: :model do
         )
 
       expect(shelter_1.find_pets).to eq([pet_1, pet_2])
-
+      expect(shelter_1.pet_count).to eq(2)
     end
   end
 end
