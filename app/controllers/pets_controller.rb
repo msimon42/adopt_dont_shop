@@ -42,8 +42,8 @@ class PetsController < ApplicationController
     redirect_to "/pets/#{@pet.id}"
   end
 
-  def delete
-    Pet.delete(params[:id])
+  def destroy
+    Pet.destroy(params[:id])
     redirect_to "/pets/"
   end
 end
