@@ -20,7 +20,7 @@ RSpec.describe 'When user clicks delete button on pet page', type: :feature do
       pet_2 = Pet.create(
         shelter_id: shelter_1.id,
         image: 'pet_2.jpg',
-        name: 'Fufu',
+        name: 'Frufru',
         description: 'Golden Maltese',
         approx_age: 2,
         sex: 'female',
@@ -31,6 +31,6 @@ RSpec.describe 'When user clicks delete button on pet page', type: :feature do
     visit "/pets/#{pet_2.id}"
     click_button 'Delete'
     expect(current_path).to eq("/pets/")
-    expect(page).to have_no_content('Fufu')
-  end    
+    expect(page).to have_no_content('Frufru')
+  end
 end
