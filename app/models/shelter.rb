@@ -5,4 +5,8 @@ class Shelter < ApplicationRecord
   def find_pets
     pets = Pet.where(shelter_id: self.id)
   end
+
+  def pet_count
+    self.find_pets.count
+  end     
 end
